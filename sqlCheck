@@ -26,3 +26,20 @@ COMMIT;
 
 Select * from FAMILY;
 Select * from PARENTCHILD;
+
+
+select cp.ChildId,cp.ParentId,f1.Names,f1.Gender
+from 
+FAMILY f1
+JOIN PARENTCHILD cp
+ON f1.Id = cp.ParentId;
+
+--select * from Family;
+
+select cp.ChildId,f2.Names,cp.ParentId,f1.Names,f1.Gender
+from 
+FAMILY f1
+JOIN PARENTCHILD cp
+ON f1.Id = cp.ParentId
+JOIN FAMILY f2
+ON f2.Id = cp.ChildId;
